@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper,openany]{book}
+\usepackage{libinstyle}
+
+%前面几页不需要页眉页脚
+\pagestyle{empty}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%% 封面 %%%%%%%%%%%%%%%%%%
+\include{data/cover}
+%%%%%%%%%%%%%%%%%%%%% 声明 %%%%%%%%%%%%%%%%%%
+\include{data/statement}
+%%%%%%%%%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%%%%%%%
+\include{data/zhAbstract}
+\include{data/enAbstract}
+%%%%%%%%%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+\pagenumbering{Roman}
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%
+\mainmatter %开始阿拉伯页数计数
+\pagestyle{myfancy} %从正文开始加入页眉页脚
+\include{data/chapter1}
+\include{data/chapter2}
+\include{data/chapter3}
+\include{data/chapter4}
+\include{data/chapter5}
+%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%
+\songti\zihao{5}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,data/reference}
+\addcontentsline{toc}{chapter}{参考文献}
+
+%%%%%%%%%%%%%%%%%%%%% 致谢 %%%%%%%%%%%%%%%%%%
+\include{data/thanks}
+\addcontentsline{toc}{chapter}{致谢}
+
+%%%%%%%%%%%%%%%%%%%%% 译文 %%%%%%%%%%%%%%%%%%
+\include{data/translation}
+\addcontentsline{toc}{chapter}{英文翻译}
+\end{document}
+

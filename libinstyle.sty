@@ -1,0 +1,145 @@
+\usepackage{ctex}  %% 中文宏包
+\usepackage{xCJKnumb}  %% 中文数字宏包，用法 \xCJKnumber{数字}
+\usepackage{tikz} %%画流程图
+\usepackage{caption} % 标题宏包
+\usepackage{paralist}
+%\usepackage{caption2}
+\usepackage{fancyhdr} % 页脚页眉
+% \usepackage{amsthm} % 数学
+\usepackage{mathtools} %% 定义数学公式格式
+\usepackage{ulem} % 删除线 ?
+\usepackage{float} % 浮动体
+\usepackage[unicode=true,colorlinks=no,pdfborder=no]{hyperref} %% 书签
+\usepackage{titletoc} %% 目录
+\usepackage{titlesec} %% 标题
+\usepackage{graphicx} %% 插图
+\usepackage{longtable} %% 长表格
+\usepackage{listings} %% 源代码
+\usepackage{xcolor}  %% 颜色
+\usepackage{colortbl}
+%% \usepackage[super]{cite} %% 参考文献
+
+%%%% 版面设计
+\setlength{\paperwidth}{21cm} %% 页宽
+\setlength{\paperheight}{29.7cm} %% 页高
+\setlength{\hoffset}{-1in} %% 垂直基准线偏移
+\setlength{\voffset}{-1in} %% 水平基准线偏移
+\setlength{\oddsidemargin}{2.5cm} %% 附加空白
+\setlength{\marginparsep}{0cm} %% 边注间最短距离
+\setlength{\marginparwidth}{0cm} %% 边注宽度
+\setlength{\textwidth}{16cm} %% 版心宽度
+\setlength{\topmargin}{1.0cm} %% 页眉与水平基准线距离
+\setlength{\headsep}{1.5cm} %% 页眉与版心距离
+\setlength{\textheight}{24.7cm} %% 版心高度
+\setlength{\footskip}{1.5cm} %% 版心最后一行文本基线与页脚基线距离
+
+%%%% 参考文献字样 黑体 三号 加粗
+\renewcommand\bibname{\bf\zihao{3}\heiti 参考文献}
+
+%%%% 章节标题
+\setcounter{secnumdepth}{5} % 章节标题编号深度
+\setcounter{tocdepth}{5} % 目录深度
+\titleformat{\chapter}{\centering\bf\zihao{3}\heiti}{第\chinese{chapter}章}{1em}{}
+\titlespacing*{\chapter}{0em}{-24pt}{2em}[0pt]
+\titleformat{\section}{\bf\zihao{4}\heiti}{\thesection}{1em}{}
+\titlespacing*{\section}{0em}{1em}{0em}[0pt]
+\titleformat{\subsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{2em}{1em}{0em}[0pt]
+\titleformat{\subsubsection}{\bf\zihao{-4}\heiti}{\thesubsection}{1em}{}
+\titlespacing*{\subsubsection}{2em}{0em}{0em}[0pt]
+%%%% 目录设置
+\renewcommand{\contentsname}{\zihao{3}目\hspace{2em}录\vspace{40pt}}
+% \titlecontents{chapter}[4em]{\zihao{-4}\heiti}{\contentslabel{4em}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
+\titlecontents{chapter}[0em]{\zihao{-4}\heiti}{\contentspush{第\xCJKnumber{\thecontentslabel}章\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\bf\contentspage}
+\titlecontents{section}[1em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
+\titlecontents{subsection}[2em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[3em]{\zihao{-4}\songti}{\contentspush{\thecontentslabel\quad}}{}{\titlerule*[0.3pc]{$\cdot$}\contentspage}
+	
+%%%%%%%%%%%%%%%%%% 页脚页眉页码 %%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{myfancy}{
+\fancyhf{}
+\fancyhead[C]{\songti\zihao{-5}北京邮电大学本科毕业设计（论文）}
+\fancyfoot[C]{\zihao{-5}\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+}
+
+%% 定义 plain style 样式
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead{}
+  \fancyfoot[C]{\zihao{-5}\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  }
+%%% 例子标题
+\makeatletter
+\newcommand\floatc@simplerule[2]{{{\@fs@cfont #1} #2}\par}% % 定制新浮动体样式
+\newcommand\fs@simplerule{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@simplerule
+  \def\@fs@pre{}
+  \def\@fs@post{\kern4pt\kern4pt \relax}%
+  \def\@fs@mid{\kern8pt}%
+  \let\@fs@iftopcapt\iftrue}
+\makeatother
+
+\floatstyle{simplerule} % 浮动体使用样式
+\newfloat{exam}{htb}{loe}[section]
+% \floatname{example}{\examplename}
+\floatname{exam}{例 }
+\captionsetup[exam]{justification=raggedright,singlelinecheck=false,labelsep=quad,labelfont=bf}
+
+
+%%%% 表格标题
+\renewcommand{\tablename}{表}
+\DeclareCaptionFont{kai}{\kaishu\zihao{5}}
+\captionsetup[table]{labelsep=quad,font=kai,format=hang}
+\renewcommand{\thetable}%
+{\arabic{chapter}-\arabic{table}}
+
+%%%% 插图标题
+\renewcommand{\figurename}{图}
+\captionsetup[figure]{labelsep=quad,font=kai,format=hang}
+\renewcommand{\thefigure}%
+{\arabic{chapter}-\arabic{figure}}
+
+%%%% 数学公式
+\newtagform{Nequation}{\kaishu \zihao{5} 式 (} {)}
+\usetagform{Nequation}
+\captionsetup[equation]{font=kai}
+\renewcommand{\theequation}
+{\arabic{chapter}-\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
+\lstset{
+  basicstyle=\linespread{1.0}\ttfamily\small,
+%  numbers=left,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{orange},
+  morekeywords={printf},
+  numberstyle={\scriptsize\color{gray}},
+  stepnumber=1, %行号会逐行往上递增
+  numbersep=5pt,
+  commentstyle=\small\color{red},
+  backgroundcolor=\color[rgb]{0.95,1.0,1.0},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  breaklines=true,
+%  frame=shadowbox, framexleftmargin=5mm, rulesepcolor=\color{red!20!green!20!blue!20!},
+% frame=single,
+%  TABframe=single,
+  tabsize=4,
+%  breaklines=tr,
+  extendedchars=false %这一条命令可以解决代码跨页时，章节标题，页眉等汉字不显示的问题
+}
+
+%%%% 参考文献
+\normalem  %% 参考文献无下划线?
+\makeatletter
+\let\asas=\cite
+\renewcommand\cite[1]{\textsuperscript{\asas{#1}}}
+\makeatother
+
+% %%%% 正文
+\linespread{1.2} %% 1.2 倍行距
+\setmainfont{Times New Roman}
+%% \setCJKmainfont{SimSun}

@@ -1,0 +1,29 @@
+\documentclass[11pt,a4paper,openany]{book}
+\usepackage{libinsty}
+
+%前面几页不需要页眉页脚
+\pagestyle{empty}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%% 封面 %%%%%%%%%%%%%%%%%%
+\include{data/cover}
+%%%%%%%%%%%%%%%%%%%%% 声明 %%%%%%%%%%%%%%%%%%
+\include{data/statement}
+%%%%%%%%%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%%%%%%%
+\include{data/zhAbstract}
+\include{data/enAbstract}
+%%%%%%%%%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%%%%%%
+\frontmatter %开始罗马页数计数
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%
+\mainmatter %开始阿拉伯页数计数
+\pagestyle{fancy} %从正文开始加入页眉页脚
+\include{data/chapter1}
+%%%%%%%%%%%%%%%%%%% 参考文献 %%%%%%%%%%%%%%%%
+\phantomsection
+\include{data/reference}
+%%%%%%%%%%%%%%%%%%%%% 致谢 %%%%%%%%%%%%%%%%%%
+\phantomsection
+\include{data/thanks}
+
+\end{document}

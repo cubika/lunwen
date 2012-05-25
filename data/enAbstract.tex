@@ -1,0 +1,21 @@
+\begin{center}
+\zihao{3}\textbf{research on query of huge amount of data}
+\end{center}
+%\vspace{0.5mm}
+\begin{center}
+\zihao{-3}\textbf{ABSTRACT}
+\end{center}
+\vspace{2mm}
+\zihao{-4}
+
+
+In order to meet the demand of storing and querying explosive huge amount of data produced by Internet.There has been many solutions. Traditional solutions use RDBMS such as mysql and its query engine, but it requires to maintain a lot of constrains between tables in mysql.Hadoop is a distributed open source architecture, and hive is a project based on Hadoop providing powerful engine with Hadoop's advantage.HBase and MongoDB are typical non-relational database.Hbase is column-oriented and MongoDB is document-oriented.Both of them provide unique storage pattern.
+
+In this thesis, we adapt horizontal comparison of real-time performance method, and it focuses on the query time consumption. We arrange for a number of experiments range from simple ones with little amount to complex ones with large amount.After the specific pratical test, I found  mysql big advantage over others on small and medium-sized query, while hive is supposed to be better on large data and complex queries. I initially consider using integration of hive and hbase to solve the problem that hbase doesn't support conditional query,but in the end ,the result is not satisfactory.
+
+To improve the real-time performance, this paper selects a few important aspects to discuss,such as the use of index ,adjusting parameters and so on. The final part talks about several mainstream algorithm.
+
+The official webiste of Hbase provides api that allows us to write java programs to manipulate data in Hbase. The last part of this article study a few concepts first and i write a corresponding program for experiments earlier and get successful results.
+
+\vspace{3mm}
+\zihao{-4}{\bfseries KEY WORDS}\quad Hive \quad HBase \quad real-time query

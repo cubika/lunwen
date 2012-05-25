@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2012.5.10)  10 MAY 2012 15:59
+entering extended mode
+**G:/毕设/tex/libinstyle.sty
+(G:/毕设/tex/libinstyle.sty
+! Undefined control sequence.
+l.1 \usepackage
+               {ctex}  %% 中文宏包
+? 
+! Emergency stop.
+l.1 \usepackage
+               {ctex}  %% 中文宏包
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!
