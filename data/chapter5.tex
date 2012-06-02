@@ -1,5 +1,6 @@
 \chapter{HBase客户端编程}
-用户可以通过编写Java程序来对HBase中存在的表进行新建删除、对记录进行插入删除以及查询等等。编程时用到的api可以从官方网站\footnote{http://hbase.apache.org/apidocs/index.html}上查到非常详细的介绍。下面介绍几个客户端编程用到的重要概念：
+我们知道，HBase有很多访问接口，其中，HBase Shell是HBase的命令行工具，它最简单，适合HBase管理使用；Thrift Gateway，它利用Thrift序列化技术，支持C++，PHP，Python等多种语言，适合其他异构系统在线访问HBase表数据；REST Gateway，支持REST 风格的Http API访问HBase, 解除了语言限制
+；还有就是我们这一章用到的Native Java API访问方式，他是最常规和高效的访问方式，适合Hadoop MapReduce Job并行批处理HBase表数据。用户可以通过编写Java程序来对HBase中存在的表进行新建删除、对记录进行插入删除以及查询等等。编程时用到的api可以从官方网站\footnote{http://hbase.apache.org/apidocs/index.html}上查到非常详细的介绍。下面介绍几个客户端编程用到的重要概念：
 
 \section{客户端编程的重要概念}
 
@@ -76,7 +77,7 @@ Hbase中的Filter是用来进行过滤查询信息的，HBase本身提供了多�
 详细信息可以查看\cite{HBaseGuide}这一本书中更加详细的介绍。
 
 \section{应用实例}
-这里我通过使用SingleColumnValueFilter来实现 select * from yuyin where ltype=4 and dtype=4 的查询。
+对应前面的条件查询实验，这里我通过使用SingleColumnValueFilter来实现 select * from yuyin where ltype=4 and dtype=4 的查询。
 
 \subsection{代码}
 
@@ -149,6 +150,7 @@ conf.setLong(HConstants.HBASE_REGIONSERVER_LEASE_PERIOD_KEY, 120000);
 }
 }
 \end{lstlisting}
+首先将查询条件放到一个List里面，将List中的字符串通过逗号分开生成字符串数组s,s[0]是hbase中的column family，s[1]是column family下对应的column，s[2]是相应的value。通过scan对象调用setFilter方法进行过滤，通过table.getScanner方法得到类型为ResultScanner的结果。逐个遍历ResultScanner的内容就可以打印出相应的信息。
 
 \subsection{编译并打包}
 \begin{lstlisting}[language=Java]
@@ -158,6 +160,8 @@ javac -cp $HBaseClassPath:$JAVA_HOME/lib/*.jar ValueFilter.java
 // 打包 
 jar -cvf ValueFilter.jar ValueFilter.class
 \end{lstlisting}
+
+编译时指定各种jar包，包括hadoop core的包，hbase 版本的包，hbase lib文件夹下的所有jar包等等。通过指定这些jar包的路径作为classpath，就能成功的生成class文件，即java的字节码。编译之后的打包工作是为了hadoop调用。
 
 \subsection{执行}
 \begin{lstlisting}[language=Java]
@@ -170,3 +174,5 @@ jar -cvf ValueFilter.jar ValueFilter.class
 \includegraphics[scale=0.5]{photo/bcjg.png} 
 \caption{mongoDB表的查询时间}
 \end{figure} 
+
+可以看出，经过了编译、打包、执行等一系列工作，最终的结果是能够准确的返回符合条件的记录集。

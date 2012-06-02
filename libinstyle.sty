@@ -16,7 +16,8 @@
 \usepackage{longtable} %% 长表格
 \usepackage{listings} %% 源代码
 \usepackage{xcolor}  %% 颜色
-\usepackage{colortbl}
+\usepackage{colortbl} %%图表
+\usepackage{overpic}
 %% \usepackage[super]{cite} %% 参考文献
 
 %%%% 版面设计
@@ -35,6 +36,7 @@
 
 %%%% 参考文献字样 黑体 三号 加粗
 \renewcommand\bibname{\bf\zihao{3}\heiti 参考文献}
+
 
 %%%% 章节标题
 \setcounter{secnumdepth}{5} % 章节标题编号深度
@@ -106,6 +108,25 @@
 \captionsetup[equation]{font=kai}
 \renewcommand{\theequation}
 {\arabic{chapter}-\arabic{equation}}
+
+%%%%%%%%%%%%%%%%%%%%%%% 列表 %%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\hintscolumnwidth}
+\newlength{\maincolumnwidth}
+\newcommand*{\cvline}[4]{%
+  \if@firstcvline%
+  \@firstcvlinefalse%
+  \else%
+  \fi%
+  \setlength{\hintscolumnwidth}{#1\textwidth}
+  \setlength{\maincolumnwidth}{#2\textwidth}
+  \begin{minipage}[t]{\hintscolumnwidth}\raggedleft{#3}\end{minipage} \quad \begin{minipage}[t]{\maincolumnwidth}#4\\[-0.7em]\end{minipage}}
+
+%% 用法：\cvitem{左宽度}{右宽度}{左栏}{右栏}
+\newcommand*{\cvitem}[4]{%
+  \if@firstcvline%
+  \else%
+  \fi%
+  \cvline{#1}{#2}{#3}{#4}}
 
 %%%%%%%%%%%%%%%%%%%%%%% 源代码 %%%%%%%%%%%%%%%%%%%%%
 \lstset{

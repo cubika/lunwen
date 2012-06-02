@@ -3,48 +3,50 @@
 \contentsline {subsection}{\numberline {1.1.1}大量的数据}{1}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}传统方法存在的问题}{1}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Hadoop架构}{2}{subsection.1.1.3}
-\contentsline {section}{\numberline {1.2}一些解决方案}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}一些解决方案}{3}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}RDBMS}{3}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Hive}{3}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}HBase}{4}{subsection.1.2.3}
-\contentsline {subsection}{\numberline {1.2.4}MongoDB}{5}{subsection.1.2.4}
-\contentsline {chapter}{\numberline {2}研究方法}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Hive和HBase的整合}{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}原理}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}整合的过程}{6}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}数据导入}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}将数据导入到hive}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}将数据导入到hive/hbase中}{10}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}导入数据到mongoDB}{13}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}导入数据到mysql中}{14}{subsection.2.2.4}
-\contentsline {chapter}{\numberline {3}查询实验结果}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}简单查询}{15}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}小数量级}{15}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}大数量级}{17}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}复杂查询}{21}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}小数量级}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}大数量级}{22}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}总结}{24}{section.3.3}
-\contentsline {chapter}{\numberline {4}查询优化}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}使用索引}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}参数优化}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}如何设定参数}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}列裁剪（Column Pruning）}{26}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}分区裁剪（Partition Pruning）}{26}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Join和MapJoin}{27}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}groupby}{27}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}合并小文件}{27}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}对join查询算法的研究}{27}{section.4.3}
-\contentsline {chapter}{\numberline {5}HBase客户端编程}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}客户端编程的重要概念}{31}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}HBaseConfiguration}{31}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}HBaseAdmin}{31}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Put和Get/Scan}{31}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Filters}{32}{subsection.5.1.4}
-\contentsline {section}{\numberline {5.2}应用实例}{32}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}代码}{32}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}编译并打包}{34}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}执行}{34}{subsection.5.2.3}
-\contentsline {chapter}{参考文献}{35}{chapter*.40}
-\contentsline {chapter}{致谢}{37}{chapter*.41}
+\contentsline {subsection}{\numberline {1.2.4}MongoDB}{6}{subsection.1.2.4}
+\contentsline {section}{\numberline {1.3}论文结构}{6}{section.1.3}
+\contentsline {chapter}{\numberline {2}研究方法}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Hive和HBase的整合}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}原理}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}整合的过程}{7}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}数据导入}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}将数据导入到hive}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}将数据导入到hive/hbase中}{11}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}导入数据到mongoDB}{14}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}导入数据到mysql中}{15}{subsection.2.2.4}
+\contentsline {chapter}{\numberline {3}查询实验结果}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}简单查询}{16}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}小数量级}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}大数量级}{18}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}复杂查询}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}小数量级}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}大数量级}{23}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}总结}{25}{section.3.3}
+\contentsline {chapter}{\numberline {4}查询优化}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}使用索引}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}参数优化}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}如何设定参数}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}列裁剪（Column Pruning）}{27}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}分区裁剪（Partition Pruning）}{27}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Join和MapJoin}{28}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}groupby}{28}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}合并小文件}{28}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}解决数据倾斜}{28}{section.4.3}
+\contentsline {section}{\numberline {4.4}对join查询算法的研究}{29}{section.4.4}
+\contentsline {chapter}{\numberline {5}HBase客户端编程}{32}{chapter.5}
+\contentsline {section}{\numberline {5.1}客户端编程的重要概念}{32}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}HBaseConfiguration}{32}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}HBaseAdmin}{32}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Put和Get/Scan}{33}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Filters}{33}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}应用实例}{33}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}代码}{33}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}编译并打包}{35}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}执行}{35}{subsection.5.2.3}
+\contentsline {chapter}{参考文献}{36}{chapter*.41}
+\contentsline {chapter}{致谢}{38}{chapter*.42}
 \contentsfinish 

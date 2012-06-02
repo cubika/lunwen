@@ -1,5 +1,5 @@
 \chapter{查询优化}
-在实际的操作中，不同的查询需要采取不同的实现方法。有时候查询语句往往一个小的改动都会造成完全不一样的时间消耗，这一点在大型数据上的表现尤其的明显。所以，在实际的执行过程中要特别注重查询的效率问题，结合数据库理论和具体的环境进行不同的优化工作。优化的方法有很多种，根据我的查找和思考，以及\cite{youhua},\cite{youhuayanjiu}的介绍，这里仅仅介绍我个人认为比较重要的几个方面。
+在实际的操作中，不同的查询需要采取不同的实现方法。有时候查询语句往往一个小的改动都会造成完全不一样的时间消耗，这一点在大型数据上的表现尤其的明显。所以，在实际的执行过程中要特别注重查询的效率问题，结合数据库理论和具体的环境进行不同的优化工作。优化的方法有很多种，根据我的查找和思考，以及\cite{youhua},\cite{youhuayanjiu},\cite{hiveperformemce},\cite{youhuaqi}的介绍，这里仅仅介绍我个人认为比较重要的几个方面。
 
 \section{使用索引}
 我们知道，索引是数据库中十分重要的一个概念，如果使用的合理适当，能够极大幅度的提高效率。从某种意义上来说，索引可以理解为一种特殊的目录。索引中保存着表中存储的索引列，并且记录了索引列在数据库表中的物理存储位置，实现了表中数据的逻辑索引。在没有索引时，查询需要进行全表的扫描，将每一条的记录取出并和查询条件一一对比，这无疑会消耗大量的时间并且造成许多磁盘IO。有了索引之后，就可以直接在索引中找到符合条件的索引值，将相应的指针返回就能够找到需要的记录。因此，有了索引可以避免全表扫描，也就可以大大减少时间。这和通过目录查找相应的内容的道理是一样的，要比一页一页的翻肯定来得快。
@@ -118,6 +118,40 @@ hive.groupby.skewindata = false 有数据倾斜的时候进行负载均衡
 \item hive.merge.mapredfiles = false 是否合并 Reduce 输出文件，默认为 False 
 \item hive.merge.size.per.task = 256*1000*1000 合并文件的大小 
 \end{compactitem}
+
+\section{解决数据倾斜}
+数据倾斜的原因是在map端处理数据量的差异太大，进而导致数据无法均匀的分配到各个reduce中。数据倾斜有很多种情形，比如说join时的key值分布不均匀，或者join时存在很多的空值。因为Hive中，主键为null值的项会被当做相同的Key而分配进同一个计算Map。另外还有groupby或者count distinct时某些值太多导致处理这个值的reduce非常的耗时。解决的方法有很多种，比如对于join时存在很多空值的情况，在sql语句中设置值不为空的不参与关联，或者把空值的key变成一个字符串加上随机数，把倾斜的数据分到不同的reduce上，由于null值关联不上，处理后并不影响最终结果。对于count distinct情况，可以利用group by替代它达到效果。比如说这样改：
+\begin{lstlisting}[language=SQL]
+//count(distinct)sql 语句
+select address,count(distinct number)
+from duanxin
+group by address;
+
+//替换的group by 语句
+select address,count(1)
+from (
+select address
+from duanxin
+group by address,number
+) t
+group by address;
+\end{lstlisting}
+
+下面两个图是两个方法得出的结果。
+\begin{figure}[h]
+\begin{minipage}[t]{0.45\linewidth}
+\centering
+\includegraphics[width=0.8\textwidth,height=5cm]{photo/qxbefore.png}
+\caption{使用cout(distinct)}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\centering
+\includegraphics[width=0.8\textwidth,height=5cm]{photo/qxafter.png}
+\caption{使用group by代替之}
+\end{minipage}
+\end{figure}
+由于这里第一数据量不是特别大，第二数据倾斜不是很严重，第三替换后的增加了子查询的操作所以才会出现前者时间比后者多的情况。
 
 \section{对join查询算法的研究}
 参考文献\cite{join}比较详细的介绍了各种join的算法。标准的join算法可以通过MapReduce的一个Job实现。在map阶段通过提取需要join的key，生成一个标签tag,再加上value形成一个（key,value)对。这个标签标志了这条记录来源于哪一个表。接下来将他们进行排序与合并。在reduce阶段，对于每一个key，根据标签来把每一个value值划分为左右两个缓冲区，该记录来源于两个表中的哪个表就放到哪个缓冲区里。然后进行笛卡尔积就可以得到结果。伪代码可以表示为：

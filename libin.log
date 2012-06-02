@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2012.5.6)  23 MAY 2012 11:21
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2012.5.6)  2 JUN 2012 11:57
 entering extended mode
 **libin
-(G:\毕设\tex\libin.tex
+(G:\bishe\tex\libin.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 (D:\ProFile\CTEX\MiKTeX\tex\latex\base\book.cls
@@ -21,7 +21,8 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (G:\毕设\tex\libinstyle.sty (D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\ctex.sty
+) (G:\bishe\tex\libinstyle.sty
+(D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\ctex.sty
 Package: ctex 2011/03/11 v1.02c ctex macros package
 
 (D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\opt\ctex-common-opts.def)
@@ -496,8 +497,7 @@ LaTeX Info: Redefining \ttfamily on input line 903.
 \CTEX@r=\count177
 ))
 (D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\def\ctex-utf8.def)
-(D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\cfg\ctex.cfg) (G:\毕设\tex\xCJKnumb.st
-y
+(D:\ProFile\CTEX\MiKTeX\tex\latex\ctex\cfg\ctex.cfg) (G:\bishe\tex\xCJKnumb.sty
 Package: xCJKnumb 2006/10/17 4.7.0
 \xCJK@q=\count178
 \xCJK@r=\count179
@@ -1077,9 +1077,36 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \everycr=\toks41
 \minrowclearance=\skip79
 )
+(D:\ProFile\CTEX\MiKTeX\tex\latex\overpic\overpic.sty
+Package: overpic 2010/09/13 v0.53  Overwriting graphics
+
+Package: overpic v0.53 <2010/09/13> (RN)
+(D:\ProFile\CTEX\MiKTeX\tex\latex\eepic\epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count318
+\d@lta=\count319
+\@delta=\dimen282
+\@@delta=\dimen283
+\@gridcnt=\count320
+\@joinkind=\count321
+\@dotgap=\dimen284
+\@ddotgap=\dimen285
+\@x@diff=\count322
+\@y@diff=\count323
+\x@diff=\dimen286
+\y@diff=\dimen287
+\@dotbox=\box59
+\num@segments=\count324
+\num@segmentsi=\count325
+\@datafile=\read2
+)
+overpic: relative positioning in percent
+)
 \@float@every@exam=\toks42
-\c@exam=\count318
-\g_fontspec_family_Times New Roman_int=\count319
+\c@exam=\count326
+\hintscolumnwidth=\skip80
+\maincolumnwidth=\skip81
+\g_fontspec_family_Times New Roman_int=\count327
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1100,13 +1127,12 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 . * 'bold italic' with NFSS spec.:
 . <->"Times New Roman/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
 .................................................
-) (G:\毕设\tex\libin.aux
-(G:\毕设\tex\data/cover.aux) (G:\毕设\tex\data/statement.aux)
-(G:\毕设\tex\data/zhAbstract.aux) (G:\毕设\tex\data/enAbstract.aux)
-(G:\毕设\tex\data/chapter1.aux) (G:\毕设\tex\data/chapter2.aux)
-(G:\毕设\tex\data/chapter3.aux) (G:\毕设\tex\data/chapter4.aux)
-(G:\毕设\tex\data/chapter5.aux) (G:\毕设\tex\data/thanks.aux)
-(G:\毕设\tex\data/translation.aux))
+) (G:\bishe\tex\libin.aux (G:\bishe\tex\data/cover.aux)
+(G:\bishe\tex\data/statement.aux) (G:\bishe\tex\data/zhAbstract.aux)
+(G:\bishe\tex\data/enAbstract.aux) (G:\bishe\tex\data/chapter1.aux)
+(G:\bishe\tex\data/chapter2.aux) (G:\bishe\tex\data/chapter3.aux)
+(G:\bishe\tex\data/chapter4.aux) (G:\bishe\tex\data/chapter5.aux)
+(G:\bishe\tex\data/thanks.aux) (G:\bishe\tex\data/translation.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
@@ -1216,7 +1242,7 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2011/09/12 v1.3 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box59
+\AtBeginShipoutBox=\box60
 Package hyperref Info: Link coloring OFF on input line 6.
 
 (D:\ProFile\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
@@ -1225,24 +1251,25 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (D:\ProFile\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count328
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
 
-(G:\毕设\tex\libin.out) (G:\毕设\tex\libin.out)
+(G:\bishe\tex\libin.out) (G:\bishe\tex\libin.out)
 \@outlinefile=\write4
-\c@lstlisting=\count321
- (G:\毕设\tex\data/cover.tex
+\c@lstlisting=\count329
+ (G:\bishe\tex\data/cover.tex
 File: photo/bupt.eps Graphic file (type eps)
- <photo/bupt.eps>
+
+<photo/bupt.eps>
 .................................................
 . fontspec info: "no-scripts"
 . 
 . Font SimHei does not contain any OpenType `Script' information.
 .................................................
-\g_fontspec_family_SimHei_int=\count322
+\g_fontspec_family_SimHei_int=\count330
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1287,7 +1314,7 @@ File: photo/bupt-logo.eps Graphic file (type eps)
 . 
 . Font SimSun does not contain any OpenType `Script' information.
 .................................................
-\g_fontspec_family_SimSun_int=\count323
+\g_fontspec_family_SimSun_int=\count331
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1316,7 +1343,7 @@ File: photo/bupt-logo.eps Graphic file (type eps)
 
 
 
-]) (G:\毕设\tex\data/statement.tex
+]) (G:\bishe\tex\data/statement.tex
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1351,7 +1378,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 ) [2
 
 
-] (G:\毕设\tex\data/zhAbstract.tex
+] (G:\bishe\tex\data/zhAbstract.tex
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1381,10 +1408,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 ) [3
 
 
-] (G:\毕设\tex\data/enAbstract.tex) [4
+] (G:\bishe\tex\data/enAbstract.tex) [4
 
 
-] (G:\毕设\tex\libin.toc
+] (G:\bishe\tex\libin.toc
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1403,7 +1430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 ])
 \tf@toc=\write5
- [2] (G:\毕设\tex\data/chapter1.tex
+ [2] (G:\bishe\tex\data/chapter1.tex
 Chapter 1.
 .................................................
 . fontspec info: "no-scripts"
@@ -1457,7 +1484,7 @@ File: photo/HDFS.jpg Graphic file (type QTm)
 . 
 . Font [SIMKAI.TTF] does not contain any OpenType `Script' information.
 .................................................
-\g_fontspec_family_[SIMKAI.TTF]_int=\count324
+\g_fontspec_family_[SIMKAI.TTF]_int=\count332
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1494,19 +1521,47 @@ File: photo/HDFS.jpg Graphic file (type QTm)
 .................................................
  [2]
 File: photo/hive.PNG Graphic file (type QTm)
- <use  "photo/hive.PNG" > [3]
+ <use  "photo/hive.PNG" > [3] [4]
 File: photo/hbase.JPG Graphic file (type QTm)
 
-<use  "photo/hbase.JPG" > [4]
+<use  "photo/hbase.JPG" >
 File: photo/hbaseTable.PNG Graphic file (type QTm)
  <use  "photo/hbaseTable.PNG" >
-Overfull \hbox (19.75476pt too wide) in paragraph at lines 122--123
+Overfull \hbox (19.75476pt too wide) in paragraph at lines 129--130
  [][] 
  []
 
-) [5
 
-] (G:\毕设\tex\data/chapter2.tex
+Underfull \vbox (badness 6173) has occurred while \output is active []
+
+ [5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
+
+ []
+
+) [6] (G:\bishe\tex\data/chapter2.tex
 Chapter 2.
 File: photo/hive-hbase.PNG Graphic file (type QTm)
 <use  "photo/hive-hbase.PNG" >
@@ -1524,7 +1579,7 @@ g/m/n/12.05 包 括 \EU1/TimesNewRoman(0)/m/n/12.05 master) \xeCJK@zhsong/m/n/1
 2.05 的 \EU1/TimesNewRoman(0)/m/n/12.05 hadoop/-
  []
 
-[6
+[7
 
 
 
@@ -1539,28 +1594,28 @@ LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 58.
 
 (D:\ProFile\CTEX\MiKTeX\tex\latex\euenc\eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7]
+) [8]
 File: photo/integration-hive.png Graphic file (type QTm)
 
 <use  "photo/integration-hive.png" >
 File: photo/integration-hbase.png Graphic file (type QTm)
  <use  "photo/integration-hbase.png" >
-[8] [9] [10]
+[9] [10] [11]
 File: photo/insert-bicc-hive.png Graphic file (type QTm)
- <use  "photo/insert-bicc-hive.png" > [11]
+ <use  "photo/insert-bicc-hive.png" > [12]
 File: photo/select-bicc-hive.png Graphic file (type QTm)
 
 <use  "photo/select-bicc-hive.png" >
 File: photo/scan-bicc-hbase.png Graphic file (type QTm)
  <use  "photo/scan-bicc-hbase.png" >
-[12
+[13
 
 ]
 File: photo/insert-yuyin-hbase.png Graphic file (type QTm)
  <use  "photo/insert-yuyin-hbase.png" >
 File: photo/insert-duanxin-hbase.png Graphic file (type QTm)
 
-<use  "photo/insert-duanxin-hbase.png" > [13
+<use  "photo/insert-duanxin-hbase.png" > [14
 
 ]
 File: photo/mongoimport.png Graphic file (type QTm)
@@ -1570,7 +1625,7 @@ File: photo/mongoimport.png Graphic file (type QTm)
 . 
 . Font [SIMFANG.TTF] does not contain any OpenType `Script' information.
 .................................................
-\g_fontspec_family_[SIMFANG.TTF]_int=\count325
+\g_fontspec_family_[SIMFANG.TTF]_int=\count333
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1593,12 +1648,12 @@ File: photo/mongoimport.png Graphic file (type QTm)
 . <->"[SIMFANG.TTF]/I/ICU:mapping=tex-text;"
 .................................................
 )
-[14] (G:\毕设\tex\data/chapter3.tex
+[15] (G:\bishe\tex\data/chapter3.tex
 Chapter 3.
 File: photo/xjh1.png Graphic file (type QTm)
 <use  "photo/xjh1.png" >
 File: photo/xjh2.png Graphic file (type QTm)
- <use  "photo/xjh2.png" > [15
+ <use  "photo/xjh2.png" > [16
 
 
 
@@ -1617,9 +1672,9 @@ File: photo/xjm3.png Graphic file (type QTm)
  <use  "photo/xjm3.png" >
 File: photo/xjm4.png Graphic file (type QTm)
  <use  "photo/xjm4.png" >
-[16
+[17
 
-] [17]
+] [18]
 File: photo/djh1.png Graphic file (type QTm)
  <use  "photo/djh1.png" >
 File: photo/djh2.png Graphic file (type QTm)
@@ -1628,7 +1683,7 @@ File: photo/djm1.png Graphic file (type QTm)
 
 <use  "photo/djm1.png" >
 File: photo/djm2.png Graphic file (type QTm)
- <use  "photo/djm2.png" > [18
+ <use  "photo/djm2.png" > [19
 
 ]
 File: photo/djh3.png Graphic file (type QTm)
@@ -1640,14 +1695,14 @@ File: photo/djm3.png Graphic file (type QTm)
  <use  "photo/djm3.png" >
 File: photo/djm4.png Graphic file (type QTm)
 
-<use  "photo/djm4.png" > [19]
+<use  "photo/djm4.png" > [20]
 File: photo/djh5.png Graphic file (type QTm)
  <use  "photo/djh5.png" >
 File: photo/djh6.png Graphic file (type QTm)
 
 <use  "photo/djh6.png" >
 File: photo/djm5.png Graphic file (type QTm)
- <use  "photo/djm5.png" > [20]
+ <use  "photo/djm5.png" > [21]
 File: photo/xfh1.png Graphic file (type QTm)
 
 <use  "photo/xfh1.png" >
@@ -1655,19 +1710,19 @@ File: photo/xfh2.png Graphic file (type QTm)
  <use  "photo/xfh2.png" >
 File: photo/xfm1.png Graphic file (type QTm)
  <use  "photo/xfm1.png" >
-[21]
+[22]
 File: photo/jb1.png Graphic file (type QTm)
  <use  "photo/jb1.png" >
 File: photo/jb3.png Graphic file (type QTm)
  <use  "photo/jb3.png" >
 (D:\ProFile\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [22]
+) [23]
 File: photo/jb2.png Graphic file (type QTm)
 
 <use  "photo/jb2.png" >
 File: photo/dfh1.png Graphic file (type QTm)
- <use  "photo/dfh1.png" > [23]
+ <use  "photo/dfh1.png" > [24]
 File: photo/dfh2.png Graphic file (type QTm)
  <use  "photo/dfh2.png" >
 File: photo/dfm1.png Graphic file (type QTm)
@@ -1686,11 +1741,11 @@ File: photo/dfm1.png Graphic file (type QTm)
 . 
 . This font family consists of the following shapes:
 .................................................
-) [24
+) [25
 
-] (G:\毕设\tex\data/chapter4.tex
+] (G:\bishe\tex\data/chapter4.tex
 Chapter 4.
-[25
+[26
 
 
 
@@ -1698,7 +1753,7 @@ Chapter 4.
 File: photo/index1.png Graphic file (type QTm)
  <use  "photo/index1.png" >
 File: photo/index2.png Graphic file (type QTm)
- <use  "photo/index2.png" > [26]
+ <use  "photo/index2.png" > [27]
 Overfull \hbox (40.73108pt too wide) in paragraph at lines 110--113
 []\EU1/TimesNewRoman(0)/m/n/12.05 hive.map.aggr = true \xeCJK@zhsong/m/n/12.05 
 是 否 在 \EU1/TimesNewRoman(0)/m/n/12.05 Map \xeCJK@zhsong/m/n/12.05 端 进
@@ -1706,38 +1761,48 @@ Overfull \hbox (40.73108pt too wide) in paragraph at lines 110--113
 mapaggr.checkinterval
  []
 
-[27]
+[28]
+File: photo/qxbefore.png Graphic file (type QTm)
+ <use  "photo/qxbefore.png" >
+File: photo/qxafter.png Graphic file (type QTm)
+ <use  "photo/qxafter.png" >
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
+ [29]
 Missing character: There is no ′ in font [lmmono10-regular]!
- (D:\ProFile\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+
+(D:\ProFile\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [28]
+) [30]
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
 Missing character: There is no ′ in font [lmmono10-regular]!
- [29])
-[30] (G:\毕设\tex\data/chapter5.tex
+) [31]
+(G:\bishe\tex\data/chapter5.tex
 Chapter 5.
 Missing character: There is no ″ in font [lmmono10-regular]!
 Missing character: There is no ″ in font [lmmono10-regular]!
 Missing character: There is no ″ in font [lmmono10-regular]!
 Missing character: There is no ″ in font [lmmono10-regular]!
 Missing character: There is no ″ in font [lmmono10-regular]!
-[31
+
+Underfull \vbox (badness 2302) has occurred while \output is active []
+
+ [32
 
 
 
-] [32]
+]
+[33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [34]
 File: photo/bcjg.png Graphic file (type QTm)
 
-<use  "photo/bcjg.png" >) [34] (G:\毕设\tex\libin.bbl
+<use  "photo/bcjg.png" >) [35] (G:\bishe\tex\libin.bbl
 .................................................
 . fontspec info: "no-scripts"
 . 
@@ -1771,15 +1836,15 @@ LaTeX Font Warning: Font shape `EU1/SimSun(0)/m/it' undefined
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.54> not available
-(Font)              size <10.95> substituted on input line 69.
+(Font)              size <10.95> substituted on input line 78.
 
-) [35
-
-
-] (G:\毕设\tex\data/thanks.tex) [36
+) [36
 
 
-] (G:\毕设\tex\data/translation.tex
+] (G:\bishe\tex\data/thanks.tex) [37
+
+
+] (G:\bishe\tex\data/translation.tex
 
 LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sl' undefined
 (Font)              using `EU1/TimesNewRoman(0)/m/n' instead on input line 7.
@@ -1797,44 +1862,44 @@ LaTeX Font Warning: Font shape `EU1/TimesNewRoman(0)/m/sl' undefined
 . 
 . This font family consists of the following shapes:
 .................................................
-[37
+[38
 
 
 
-] [38] [39] [40]
+] [39] [40] [41] [42]
 File: photo/yingyu1.png Graphic file (type QTm)
  <use  "photo/yingyu1.png" >
-Overfull \hbox (16.43347pt too wide) in paragraph at lines 79--80
+Overfull \hbox (16.43347pt too wide) in paragraph at lines 94--95
 [][] 
  []
 
 File: photo/yingyu2.png Graphic file (type QTm)
 <use  "photo/yingyu2.png" >
-Overfull \hbox (15.76347pt too wide) in paragraph at lines 83--84
+Overfull \hbox (15.76347pt too wide) in paragraph at lines 98--99
 [][] 
  []
 
 File: photo/yingyu3.png Graphic file (type QTm)
 <use  "photo/yingyu3.png" >
-Overfull \hbox (13.75348pt too wide) in paragraph at lines 87--88
+Overfull \hbox (13.75348pt too wide) in paragraph at lines 102--103
 [][] 
  []
 
 File: photo/yingyu4.png Graphic file (type QTm)
 <use  "photo/yingyu4.png" >
-Overfull \hbox (17.77347pt too wide) in paragraph at lines 91--92
+Overfull \hbox (17.77347pt too wide) in paragraph at lines 106--107
 [][] 
  []
 
 File: photo/yingyu5.png Graphic file (type QTm)
 <use  "photo/yingyu5.png" >
-Overfull \hbox (15.76347pt too wide) in paragraph at lines 95--96
+Overfull \hbox (15.76347pt too wide) in paragraph at lines 110--111
 [][] 
  []
 
 File: photo/yingyu6.png Graphic file (type QTm)
 <use  "photo/yingyu6.png" >
-Overfull \hbox (16.43347pt too wide) in paragraph at lines 99--100
+Overfull \hbox (16.43347pt too wide) in paragraph at lines 114--115
 [][] 
  []
 
@@ -1842,29 +1907,29 @@ File: photo/yingyu7.png Graphic file (type QTm)
 <use  "photo/yingyu7.png" >
 File: photo/yingyu8.png Graphic file (type QTm)
  <use  "photo/yingyu8.png" >
-Overfull \hbox (17.77347pt too wide) in paragraph at lines 107--108
+Overfull \hbox (17.77347pt too wide) in paragraph at lines 122--123
 [][] 
  []
 
-) [41] [42] [43] [44] [45] [46] [47] [48]
+) [43] [44] [45] [46] [47] [48] [49] [50]
 
-Package caption Warning: Unused \captionsetup[exam] on input line 87.
+Package caption Warning: Unused \captionsetup[exam] on input line 89.
 See the caption package documentation for explanation.
 
 
-Package caption Warning: Unused \captionsetup[equation] on input line 106.
+Package caption Warning: Unused \captionsetup[equation] on input line 108.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
-(G:\毕设\tex\libin.aux (G:\毕设\tex\data/cover.aux)
-(G:\毕设\tex\data/statement.aux) (G:\毕设\tex\data/zhAbstract.aux)
-(G:\毕设\tex\data/enAbstract.aux) (G:\毕设\tex\data/chapter1.aux)
-(G:\毕设\tex\data/chapter2.aux) (G:\毕设\tex\data/chapter3.aux)
-(G:\毕设\tex\data/chapter4.aux) (G:\毕设\tex\data/chapter5.aux)
-(G:\毕设\tex\data/thanks.aux) (G:\毕设\tex\data/translation.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 40.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 40.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
+(G:\bishe\tex\libin.aux (G:\bishe\tex\data/cover.aux)
+(G:\bishe\tex\data/statement.aux) (G:\bishe\tex\data/zhAbstract.aux)
+(G:\bishe\tex\data/enAbstract.aux) (G:\bishe\tex\data/chapter1.aux)
+(G:\bishe\tex\data/chapter2.aux) (G:\bishe\tex\data/chapter3.aux)
+(G:\bishe\tex\data/chapter4.aux) (G:\bishe\tex\data/chapter5.aux)
+(G:\bishe\tex\data/thanks.aux) (G:\bishe\tex\data/translation.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 46.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 46.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1875,12 +1940,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 33237 strings out of 430478
- 624409 string characters out of 3191303
- 802349 words of memory out of 3000000
- 35682 multiletter control sequences out of 15000+200000
+ 33372 strings out of 430478
+ 626133 string characters out of 3191303
+ 796396 words of memory out of 3000000
+ 35809 multiletter control sequences out of 15000+200000
  11996 words of font info for 126 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 64i,12n,94p,865b,1264s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,12n,94p,865b,1262s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on libin.pdf (54 pages).
+Output written on libin.pdf (56 pages).

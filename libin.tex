@@ -6,15 +6,20 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%% 封面 %%%%%%%%%%%%%%%%%%
+\pdfbookmark[0]{标题页}{cover}
 \include{data/cover}
 %%%%%%%%%%%%%%%%%%%%% 声明 %%%%%%%%%%%%%%%%%%
+\pdfbookmark[0]{声明}{statement}
 \include{data/statement}
 %%%%%%%%%%%%%%%%%%%%% 摘要 %%%%%%%%%%%%%%%%%%
+\pdfbookmark[0]{中文摘要}{zhAbstract}
 \include{data/zhAbstract}
+\pdfbookmark[0]{英文摘要}{enAbstract}
 \include{data/enAbstract}
 %%%%%%%%%%%%%%%%%%%%% 目录 %%%%%%%%%%%%%%%%%%
 \pagestyle{plain}
 \pagenumbering{Roman}
+\pdfbookmark[0]{目录}{tfcontents}
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%% 正文 %%%%%%%%%%%%%%%%%%
 \mainmatter %开始阿拉伯页数计数
@@ -35,6 +40,7 @@
 \addcontentsline{toc}{chapter}{致谢}
 
 %%%%%%%%%%%%%%%%%%%%% 译文 %%%%%%%%%%%%%%%%%%
+\pdfbookmark[0]{译文}{translation}
 \include{data/translation}
 \addcontentsline{toc}{chapter}{英文翻译}
 \end{document}

@@ -45,7 +45,7 @@
 \caption{hive-site.xml的设置}
 \end{figure} 
 
-如图所示，就是在启动时提供了各个jar包的路径用来加载。
+如图所示，这个配置文件的意思就是在启动时指定了各个软件的jar包的路径，这样启动后的handler就可以调用相应的jar包。
 
 \item 单节点启动方法：
 bin/hive –hiveconf hbase.master=master:60000
@@ -53,7 +53,7 @@ bin/hive –hiveconf hbase.master=master:60000
 bin/hive –hiveconf hbase.zookeeper.quorum=slave
 
 
-\item  创建hbase识别的数据库:
+\item  创建hbase识别的表:
 
 \begin{lstlisting}[language=SQL]
 CREATE TABLE hbase_table_1(key int, value string)  
@@ -63,7 +63,7 @@ TBLPROPERTIES ("hbase.table.name" = "xyz");
 \end{lstlisting}
 
 
-这里主要的两点是：1.存储时用到了HBaseStorageHandler，这个工具的作用就是可以用它来创建和操作新的HBase表格。2.指定时加入映射的关系，即hbase.columns.mapping，将hive表中的某一列映射为hbase的某一列族的某一列，在指定时要明确用：key来使某一列称为Hbase的rowkey，另外映射前后表的列数必须相同。
+创建表时需要注意到的两点是：1.存储时用到了HBaseStorageHandler，这个工具的作用就是可以用它来创建新的HBase表格、删除HBase中的表格等等。2.指定时加入映射的关系，即hbase.columns.mapping，将hive表中的某一列映射为hbase的某一列族的某一列，在指定时必须要明确用：key来使某一列称为Hbase的rowkey，另外映射前后表的列数必须相同。
 
 \item 导入数据
 
@@ -73,7 +73,7 @@ hive> LOAD DATA LOCAL INPATH './examples/files/kv1.txt' OVERWRITE INTO TABLE pok
 hive> INSERT OVERWRITE TABLE hbase_table_1 SELECT * FROM pokes WHERE foo=86;
 \end{lstlisting}
 
-这样就在整合的表hbase\_table\_1中插入了一条记录。
+这样就在整合后的表hbase\_table\_1中插入了一条记录foo=86。
 
 \item 分别在hive中和hbase中查看数据
 
@@ -92,14 +92,14 @@ hbase(main):002:0> scan 'xyz'
 
 \includegraphics[]{photo/integration-hbase.png}
 
-  从上两幅图中可以看出，经过整合之后的确能在hive里面查询hbase表格中存在的数据。说明二者已经紧密结合。
+  从上两幅图中可以看出，无论对于hive中存在的表hbase\_table\_1还是hbase中的表xyz,他们两个已经息息相关，他们两个表中的数据是一样的，而且对任何一个表进行插入操作都会引起两个表的查询结果同时改变，这说明二者已经紧密结合。
 \end{enumerate}
 
 \section{数据导入}
-在基础性调研之前需要进行各个表格的创建以及数据的导入。数据的导入方法随着数据库的不同而不同，导入的时间消耗其实也可以作为一项实时性的性能指标。
+在基础性调研之前首先需要做的工作是进行各个表格的创建以及数据的导入。数据的导入方法随着数据库的不同而不同，但基本上大同小异。由于导入时数据量可以很大，导入的时间消耗其实也可以作为一项实时性的性能指标。
 
 \subsection{将数据导入到hive}
-  这里导入的文件格式是csv -- 逗号分隔型取值格式（英文全称为Comma Separated Values，简称CSV）。它是一种纯文本格式，用来存储数据。在CSV中，数据的字段由逗号分开，程序通过读取文件重新创建正确的字段。下面介绍导入的具体步骤。
+  这里导入的文件格式是csv -- 逗号分隔型取值格式（英文全称为Comma Separated Values，简称CSV）。它是一种纯文本格式，用来存储数据。在CSV中，数据的字段由逗号分开，程序通过读取文件重新创建正确的字段。hive中对于不同的格式有不同的导入方法，下面介绍hive导入csv格式文本文件的具体步骤。
 
 \begin{enumerate}
 
@@ -149,21 +149,21 @@ row format serde 'com.bizo.hive.serde.csv.CSVSerde'
 stored as textfile;
 \end{lstlisting}
 
-使用了CSVSerde指定格式，具体来说就是以逗号作为每个域的分隔符，换行作为每个行的分隔符。
+这里的row format其实是使用了刚刚添加的jar包CSVSerde，目的就是告诉hive如何判断每一个域，具体来说就是以逗号作为每个域的分隔符，换行作为每个行的分隔符。
 
 \item 插入数据：
 插入了100个记录，插入的源是文件bicc\_100.csv
 \begin{lstlisting}
 bin/hadoop fs -put /home/cloud/data/bicc_100.csv /user/hive/warehouse/bicc
 \end{lstlisting}
-或者用hive提供的LOAD DATA INPATH语法也可以。
+因为这里hive数据仓库在HDFS中的路径就是/user/hive/warehouse,将文件直接放到这个目录下的bicc目录里其实也是相当于在这个表中插入了数据。另外用hive提供的LOAD DATA INPATH语法插入数据也可以。
 
 
-  同理新建两个大数据量的表格：yuyin(380万个记录）和duanxin（940万个记录）。这两个表的结构是一样的，同样是：“用户号码|漫游类型|区号呼叫发生地|呼叫日期|呼叫时间|长途类型|方向类型|通话时长|位置小区代码|蜂窝号基站代码|”，建表的语句就不在赘述。
+  同理可以新建两个大数据量的表格：yuyin(380万个记录）和duanxin（940万个记录）。这两个表的结构是一样的，同样是：“用户号码|漫游类型|区号呼叫发生地|呼叫日期|呼叫时间|长途类型|方向类型|通话时长|位置小区代码|蜂窝号基站代码|”，建表的语句和上面类似，在这里就不在赘述了。
 \end{enumerate}
 
 \subsection{将数据导入到hive/hbase中}
-经过整合之后，hive/hbase的所有操作和hive是完全一样的，唯一的不同就是需要首先启动hbase服务。下面是具体的情况。
+经过整合之后，hive/hbase的所有操作和hive是完全一样的，唯一的不同就是需要首先启动hbase服务。因为只有开启了hbase服务后handler才能打开hbase中的表。下面是向整合后的表插入数据的各个具体步骤。
 \begin{enumerate}
 
 \item 创建hive和hbase整合后的表 SRC\_TBD\_BICC\_CDR，这个表对应了上述的表bicc。建表语句是：
@@ -211,6 +211,7 @@ WITH SERDEPROPERTIES
 TBLPROPERTIES ("hbase.table.name" = "BICC_CDR");
 \end{lstlisting}
 
+同理这里指定了各个列的对应关系。
 \item 插入数据
 
 \begin{lstlisting}[language=SQL]

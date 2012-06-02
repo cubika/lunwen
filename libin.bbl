@@ -53,6 +53,15 @@ M.~D. Kristina~Chodorow, \emph{MongoDB: The Definitive Guide}.\hskip 1em plus
 毛杰and佘名高, ``海量数据库查询优化研究,'' \emph{软件导刊
   SOFT WARE GUIDE}, vol.~{9}, {2010}.
 
+\bibitem{hiveperformemce}
+叶文宸, ``基于hive的性能优化方法的研究与实践,''
+  \emph{南京大学}, {OCT} {2011}.
+
+\bibitem{youhuaqi}
+.~谭磊 and 王占宏,
+  ``基于优化器的提高海量数据查询效率方法研究,''
+  \emph{计算机应用与软件}, vol.~{01}, {2012}.
+
 \bibitem{mapjoin}
 A.~K. H.~T. Dawei~Jiang and G.~Chen, ``Map-join-reduce: Towards scalable and
   efficient data analysis on large clusters,'' \emph{Knowledge and Data
